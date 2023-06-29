@@ -1,4 +1,4 @@
-public class units {
+public class Units {
     public int health;
     public int defence;
     public int actionPoints;
@@ -7,7 +7,7 @@ public class units {
 
     public int initiative;
 
-    public units(int health, int defence, int actionPoints, int power, String name, int initiative) {
+    public Units(int health, int defence, int actionPoints, int power, String name, int initiative) {
         this.health = health;
         this.defence = defence;
         this.actionPoints = actionPoints;
@@ -23,10 +23,14 @@ public class units {
         else return false;
     }
 
-    public int move() {
-        while(hasAp()){
+    public void move() {
+        //while(hasAp()){
 
-        }
+        //}
+    }
+
+    public void attack() {
+
     }
 
 
