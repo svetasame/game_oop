@@ -1,18 +1,20 @@
-public class Units {
-    public int health;
+public abstract class Units implements InGameDN{
+    public float maxHealth, currentHealth;
+
     public int defence;
     public int actionPoints;
     public int power;
     public String name;
+    public int [] damage;
 
     public int initiative;
 
-    public Units(int health, int defence, int actionPoints, int power, String name, int initiative) {
-        this.health = health;
+    public Units(int maxHealth, int defence, int actionPoints, int power, int initiative) {
+        this.maxHealth = maxHealth;
         this.defence = defence;
         this.actionPoints = actionPoints;
         this.power = power;
-        this.name = name;
+//        this.name = name;
         this.initiative = initiative;
     }
 
@@ -32,6 +34,15 @@ public class Units {
     public void attack() {
 
     }
+
+    public void getDamage(float damage){
+        currentHealth -=damage;
+    }
+    @Override
+    public void step() {
+
+    }
+
 
 
 
