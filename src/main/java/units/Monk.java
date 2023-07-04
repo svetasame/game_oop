@@ -1,6 +1,8 @@
+package units;
+
 public class Monk extends Units {
-    public Monk(String name) {
-        super(50, 12, 1, 10, 2);
+    public Monk(String name)
+    {super(110, 11, 4, 4, new int[]{-1,-5}, name);
     }
 
     public void castMana() {
@@ -12,5 +14,8 @@ public class Monk extends Units {
         if (currentHealth >= maxHealth) currentHealth = maxHealth;
     }
 
-
+    @Override
+    public String getInfo() {
+        return "Монах " + name;
+    }
 }
