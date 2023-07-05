@@ -12,7 +12,7 @@ public class Spearman extends Units {
     public void longAttack(){}
     @Override
     public String getInfo() {
-        return String.format("Арбалетчик "+ name + ", координаты: " + coordinates.x +", " + coordinates.y);
+        return String.format("Арбалетчик %s, x:%d, y%d", name, coordinates.x, coordinates.y);
     }
 
     @Override

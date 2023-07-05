@@ -8,7 +8,7 @@ public class Rouge extends Units {
     }
     @Override
     public String getInfo() {
-        return String.format("Вор "+ name + ", координаты: " + coordinates.x +", " + coordinates.y);
+        return String.format("Вор %s, x:%d, y%d", name, coordinates.x, coordinates.y);
     }
 
     @Override

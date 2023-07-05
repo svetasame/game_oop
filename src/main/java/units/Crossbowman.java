@@ -8,7 +8,7 @@ public class Crossbowman extends Units {
     }
     @Override
     public String getInfo() {
-        return String.format("Копьеносец "+ name + ", координаты: " + coordinates.x +", " + coordinates.y);
+        return String.format("Копьеносец %s, x:%d, y%d", name, coordinates.x, coordinates.y);
     }
 
     @Override

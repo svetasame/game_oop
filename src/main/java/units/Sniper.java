@@ -13,7 +13,7 @@ public class Sniper extends Units {
     public void fire() {}
     @Override
     public String getInfo() {
-        return String.format("Снайпер "+ name + ", координаты: " + coordinates.x +", " + coordinates.y);
+        return String.format("Снайпер %s, x:%d, y%d", name, coordinates.x, coordinates.y);
     }
 
     @Override

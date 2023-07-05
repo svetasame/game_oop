@@ -18,7 +18,7 @@ public class Monk extends Units {
 
     @Override
     public String getInfo() {
-        return String.format("Монах "+ name + ", координаты: " + coordinates.x +", " + coordinates.y);
+        return String.format("Монах %s, x:%d, y%d", name, coordinates.x, coordinates.y);
     }
 
     @Override

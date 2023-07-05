@@ -16,10 +16,8 @@ public class Main {
         System.out.println("Команда 2");
         team2.forEach(n-> System.out.println(n.getInfo()));
 
-//        team1.get(0).step(team2);
-//        team1.get(0).nearest(team2);
+        System.out.println();
         System.out.println("Ближайший враг: ");
-//        System.out.println(team1.get(0).nearest(team2).getInfo());
         team1.forEach(n -> n.step(team2));
 
 

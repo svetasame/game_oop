@@ -9,7 +9,7 @@ public class Magician extends Units {
     public int mana;
     @Override
     public String getInfo() {
-        return String.format("Маг "+ name + ", координаты: " + coordinates.x +", " + coordinates.y);
+        return String.format("Маг %s, x:%d, y%d", name, coordinates.x, coordinates.y);
     }
 
     @Override
