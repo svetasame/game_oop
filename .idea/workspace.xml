@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f910c4e9-d42b-48dc-8704-4949bb47a7b6" name="Changes" comment="ДЗ 5.07.2023">
+    <list default="true" id="f910c4e9-d42b-48dc-8704-4949bb47a7b6" name="Changes" comment="ДЗ 5.07.2023_1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/units/Crossbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Crossbowman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/units/Magician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Magician.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/units/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Monk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/units/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Peasant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/units/Rouge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Rouge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/units/Sniper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Sniper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/units/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Spearman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/units/Units.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Units.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,13 +92,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688543505986</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ДЗ 5.07.2023_1">
+      <created>1688564778957</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1688564778957</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="пол семинара" />
     <MESSAGE value="ДЗ 1.07.2023" />
     <MESSAGE value="ДЗ 5.07.2023" />
-    <option name="LAST_COMMIT_MESSAGE" value="ДЗ 5.07.2023" />
+    <MESSAGE value="ДЗ 5.07.2023_1" />
+    <option name="LAST_COMMIT_MESSAGE" value="ДЗ 5.07.2023_1" />
   </component>
 </project>

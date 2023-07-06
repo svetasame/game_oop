@@ -57,9 +57,10 @@ public abstract class Units implements InGameDN {
         double nearestDistance = Double.MAX_VALUE;
         Units nearestEnemy = null;
         for(int i = 0; i < units.size(); i++) {
-            if (coordinates.countDistance(units.get(i).coordinates) < nearestDistance);
+            if (coordinates.countDistance(units.get(i).coordinates) < nearestDistance) {
                 nearestEnemy = units.get(i);
                 nearestDistance = coordinates.countDistance(units.get(i).coordinates);
+            }
         }
         return nearestEnemy;
    }
