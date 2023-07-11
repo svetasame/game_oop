@@ -9,12 +9,12 @@ public abstract class Units implements InGameDN {
     protected int attack;
     protected int power;
     public String name;
-    protected int [] damage;
+    protected int damage;
 
     protected Coordinates coordinates;
 
 
-    public Units(float maxHealth, int defence, int attack, int power, int[] damage, String name, int x, int y) {
+    public Units(float maxHealth, int defence, int attack, int power, int damage, String name, int x, int y) {
         this.maxHealth = maxHealth;
         this.defence = defence;
         this.attack = attack;
@@ -36,9 +36,27 @@ public abstract class Units implements InGameDN {
 //    public void attack() {
 //
 //    }
+    public static boolean isDead;
 
-    public void getDamage(float damage){
-        currentHealth -=damage;
+    public void doAttack(Units target){
+//        int damage = 1;
+        target.getDamage(damage);
+    }
+
+    @Override
+    public float getHealth() {
+        return currentHealth;
+    }
+
+    public void getDamage(int damage){
+        if (this.currentHealth - damage > 0){
+            this.currentHealth -= damage;
+        }
+        else {this.currentHealth = 0;}
+
+//        if (this.currentHealth - damage > this.maxHealth){
+//            currentHealth = maxHealth;
+//        }
     }
 
     @Override
@@ -64,6 +82,8 @@ public abstract class Units implements InGameDN {
         }
         return nearestEnemy;
    }
+
+
 
 
 }

@@ -18,7 +18,12 @@ public class Main {
 
         System.out.println();
         System.out.println("Ближайший враг: ");
-        team1.forEach(n -> n.step(team2));
+        team1.forEach(n -> n.step(team2, team1));
+
+        Crossbowman crossbowman = new Crossbowman(getName(),1,3);
+        Sniper sniper = new Sniper(getName(),10,5);
+
+
 
 
 
