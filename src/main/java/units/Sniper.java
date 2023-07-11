@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Sniper extends Units {
     public Sniper(String name, int x, int y) {
-        super(130, 15, 3, 5, 4, name, x,y);
+        super(130, 15, 4, 5, 4, name, x,y);
         this.shots = 10;
     }
     public int shots;

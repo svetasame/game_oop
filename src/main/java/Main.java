@@ -1,6 +1,7 @@
 import units.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Main {
@@ -22,9 +23,6 @@ public class Main {
 
         Crossbowman crossbowman = new Crossbowman(getName(),1,3);
         Sniper sniper = new Sniper(getName(),10,5);
-
-
-
 
 
     }
@@ -64,6 +62,13 @@ public class Main {
                 case 3 -> team.add(new Sniper(getName(), x, y));
             }
         }
+//        team.sort(new Comparator<Units>() {
+//                      @Override
+//                      public int compare(Units o1, Units o2) {
+//                          return 0;
+//                      }
+//                  });
+
         return team;
     }
 }

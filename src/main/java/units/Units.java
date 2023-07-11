@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class Units implements InGameDN {
+
     protected float maxHealth, currentHealth;
     protected int defence;
-    protected int attack;
+    protected int speed;
     protected int power;
     public String name;
     protected int damage;
@@ -14,10 +15,10 @@ public abstract class Units implements InGameDN {
     protected Coordinates coordinates;
 
 
-    public Units(float maxHealth, int defence, int attack, int power, int damage, String name, int x, int y) {
+    public Units(float maxHealth, int defence, int speed, int power, int damage, String name, int x, int y) {
         this.maxHealth = maxHealth;
         this.defence = defence;
-        this.attack = attack;
+        this.speed = speed;
         this.power = power;
         this.name = name;
         this.damage = damage;
