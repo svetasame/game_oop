@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public interface InGameDN {
     void step(ArrayList<Units> units1, ArrayList<Units> units2);
     String getInfo();
+    Integer getSpeed();
     float getHealth();
 
 }

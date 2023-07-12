@@ -1,6 +1,7 @@
 import units.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Random;
 
@@ -23,6 +24,24 @@ public class Main {
 
         Crossbowman crossbowman = new Crossbowman(getName(),1,3);
         Sniper sniper = new Sniper(getName(),10,5);
+
+        ArrayList<Units> together = new ArrayList<>();
+        together.addAll(team1);
+        together.addAll(team2);
+        System.out.println();
+        together.forEach(n-> System.out.println(n.getInfo()));
+        Collections.sort(together, new Comparator<Units>() {
+            @Override
+            public int compare(Units o1, Units o2) {
+                return Integer.compare(o1.getSpeed(), o2.getSpeed());
+            }
+        });
+        System.out.println("Отсортировано по скорости");
+        together.forEach(n-> System.out.println(n.getInfo()));
+
+
+
+
 
 
     }
@@ -62,13 +81,6 @@ public class Main {
                 case 3 -> team.add(new Sniper(getName(), x, y));
             }
         }
-//        team.sort(new Comparator<Units>() {
-//                      @Override
-//                      public int compare(Units o1, Units o2) {
-//                          return 0;
-//                      }
-//                  });
-
-        return team;
+      return team;
     }
 }

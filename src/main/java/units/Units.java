@@ -65,6 +65,11 @@ public abstract class Units implements InGameDN {
         return name;
     }
 
+    @Override
+    public Integer getSpeed(){
+        return speed;
+    }
+
     public String getNewName() {
         String s = String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
         name = s;
