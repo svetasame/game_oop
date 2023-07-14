@@ -2,7 +2,7 @@ package units;
 
 import java.util.ArrayList;
 
-public class Magician extends Units {
+public class Magician extends Healers {
     public Magician(String name, int x, int y)
     {super(120, 12, 3, 4, 2, name, x, y);
     }
