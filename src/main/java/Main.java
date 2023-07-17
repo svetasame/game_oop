@@ -1,50 +1,75 @@
 import units.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Random;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static ArrayList<Units> team1 = new ArrayList<>();
+    public static ArrayList<Units> team2 = new ArrayList<>();
+    public static ArrayList<Units> allTeam = new ArrayList<>();
+    private static java.lang.Object Units;
 
+
+    public static boolean main(String[] args) {
 
         ArrayList<Units> team1 = addToList();
         System.out.println("Команда 1");
-        team1.forEach(n-> System.out.println(n.getInfo()));
+        team1.forEach(n -> System.out.println(n.getInfo()));
 
         ArrayList<Units> team2 = addToList1();
         System.out.println();
         System.out.println("Команда 2");
-        team2.forEach(n-> System.out.println(n.getInfo()));
+        team2.forEach(n -> System.out.println(n.getInfo()));
+
+//        System.out.println();
+//        System.out.println("Ближайший враг: ");
+//        team1.forEach(n -> n.step(team2, team1));
+
+//        Crossbowman crossbowman = new Crossbowman(getName(),1,3);
+//        Sniper sniper = new Sniper(getName(),10,5);
+
+        allTeam.addAll(team1);
+        allTeam.addAll(team2);
 
         System.out.println();
-        System.out.println("Ближайший враг: ");
-        team1.forEach(n -> n.step(team2, team1));
-
-        Crossbowman crossbowman = new Crossbowman(getName(),1,3);
-        Sniper sniper = new Sniper(getName(),10,5);
-
-        ArrayList<Units> together = new ArrayList<>();
-        together.addAll(team1);
-        together.addAll(team2);
-        System.out.println();
-        together.forEach(n-> System.out.println(n.getInfo()));
-        Collections.sort(together, new Comparator<Units>() {
+        allTeam.forEach(n -> System.out.println(n.getInfo()));
+        Collections.sort(allTeam, new Comparator<Units>() {
             @Override
             public int compare(Units o1, Units o2) {
-                return Integer.compare(o1.getSpeed(), o2.getSpeed());
+                return Integer.compare(o2.getSpeed(), o1.getSpeed());
             }
         });
         System.out.println("Отсортировано по скорости");
-        together.forEach(n-> System.out.println(n.getInfo()));
+        allTeam.forEach(n -> System.out.println(n.getInfo()));
 
-
-
-
+        Scanner in = new Scanner(System.in);
+        while (true) {
+            View.view();
+            in.nextLine();
+            for (Units units : allTeam) {
+                if (team2.contains(units)) {
+                    units.step(team1, team2);
+                } else units.step(team2, team1);
+            }
+            if (isTeamDie(team1)) {
+                System.out.println("Team 2 (Blue) win");
+                break;
+            }
+            if (isTeamDie(team2)) {
+                System.out.println("Team 1 (Green) win");
+                break;
+            }
+        }
 
 
     }
+
+   static boolean isTeamdie (ArrayList<Units> team){
+            for (Units units: team){
+                if (!units.isAlive) {return true;}
+                else {return false;}
+            }
+        }
+
     private static String getName() {
         //если вызываем метод из метода то нужен статик
         String s = String.valueOf(Nametor.values()[new Random().nextInt(Nametor.values().length)]);
@@ -55,7 +80,7 @@ public class Main {
         ArrayList<Units> team = new ArrayList();
         for (int i = 0; i <= 10; i++) {
             int value = new Random().nextInt(4);
-            int x = 0;
+            int x = 1;
             int y = i+1;
             switch (value) {
                 case 0 -> team.add(new Monk(getName(), x, y));

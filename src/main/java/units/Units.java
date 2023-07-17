@@ -5,60 +5,53 @@ import java.util.Random;
 
 public abstract class Units implements InGameDN {
 
-    protected float maxHealth, currentHealth;
-    protected int defence;
+    protected int maxHealth, currentHealth;
+    public int mana, currentMana;
     protected int speed;
     protected int power;
     public String name;
     protected int damage;
-
+    public String state = "Stand";
+    public boolean isAlive;
     protected Coordinates coordinates;
 
 
-    public Units(float maxHealth, int defence, int speed, int power, int damage, String name, int x, int y) {
+
+    public Units(int maxHealth, int mana, int speed, int power, int damage, String name, int x, int y, String state) {
         this.maxHealth = maxHealth;
-        this.defence = defence;
+        this.mana = mana;
         this.speed = speed;
         this.power = power;
         this.name = name;
         this.damage = damage;
+        this.currentHealth = maxHealth;
+        this.currentMana = mana;
+        // Stand, Busy, Dead, Move, Attack, Heal
+        this.state = state;
         coordinates = new Coordinates(x,y);
       }
 
-//    public boolean hasAp(){
-//        if(defence>0){
-//            return true;
-//        }
-//        else return false;
-//    }
-
-
-
-//    public void attack() {
-//
-//    }
-    public static boolean isDead;
-
-    public void doAttack(Units target){
-//        int damage = 1;
-        target.getDamage(damage);
-    }
 
     @Override
-    public float getHealth() {
-        return currentHealth;
+    public float getHealth() {return currentHealth;
     }
 
-    public void getDamage(int damage){
-        if (this.currentHealth - damage > 0){
-            this.currentHealth -= damage;
+    public void getDamage(int damage) {
+        currentHealth -= damage;
+        if (currentHealth <= 0) {
+            currentHealth = 0;
+            isAlive = false;
+            state = "Dead";
         }
-        else {this.currentHealth = 0;}
-
-//        if (this.currentHealth - damage > this.maxHealth){
-//            currentHealth = maxHealth;
-//        }
+        if (currentHealth >= maxHealth) {
+            currentHealth = maxHealth;
+            state = "Heal";
+        }
     }
+
+
+
+
 
     @Override
     public String getInfo() {
@@ -66,7 +59,7 @@ public abstract class Units implements InGameDN {
     }
 
     @Override
-    public Integer getSpeed(){
+    public int getSpeed(){
         return speed;
     }
 
@@ -75,7 +68,6 @@ public abstract class Units implements InGameDN {
         name = s;
         return name;
     }
-
 
     public Units nearest(ArrayList<Units> units) {
         double nearestDistance = Double.MAX_VALUE;
