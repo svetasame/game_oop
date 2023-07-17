@@ -9,7 +9,7 @@ public class Main {
     private static java.lang.Object Units;
 
 
-    public static boolean main(String[] args) {
+    public static void main(String[] args) {
 
         ArrayList<Units> team1 = addToList();
         System.out.println("Команда 1");
@@ -63,12 +63,13 @@ public class Main {
 
     }
 
-   static boolean isTeamdie (ArrayList<Units> team){
-            for (Units units: team){
-                if (!units.isAlive) {return true;}
-                else {return false;}
+   static boolean isTeamDie (ArrayList<Units> team){
+        for (Units units: team){
+            if (!units.isAlive) {return true;}
+            else {return false;}
             }
-        }
+       return false;
+   }
 
     private static String getName() {
         //если вызываем метод из метода то нужен статик

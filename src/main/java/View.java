@@ -1,4 +1,6 @@
 
+import units.Units;
+
 import java.util.Collections;
 
 public class View {
@@ -25,9 +27,9 @@ public class View {
     }
     private static String getChar(int x, int y){
         String out = "| ";
-        for (Hero human: Main.allTeam) {
-            if (human.getCoords()[0] == x && human.getCoords()[1] == y){
-                if (human.getHp() == 0) {
+        for (Units human: Main.allTeam) {
+            if (human.countDistance()[0] == x && human.countDistance()[1] == y){
+                if (human.getHealth() == 0) {
                     out = "|" + (AnsiColors.ANSI_RED + human.toString().charAt(0) + AnsiColors.ANSI_RESET);
                     break;
                 }
