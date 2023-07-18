@@ -9,7 +9,7 @@ public class Monk extends Healers {
 
     @Override
     public String getInfo() {
-        return String.format("Монах %s, [%d,%d] HP:%d/%d, mana:%d/%d, %d",
+        return String.format("Монах %s, [%d,%d] HP:%d/%d, mana:%d/%d, %s",
                 name, coordinates.x, coordinates.y, currentHealth,maxHealth, currentMana, mana, state);
     }
 

@@ -14,7 +14,7 @@ public class Crossbowman extends Units {
 
     @Override
     public String getInfo() {
-        return String.format("Арбалетчик %s, [%d,%d] HP:%d/%d, shots:%d, %d",
+        return String.format("Арбалетчик %s, [%d,%d] HP:%d/%d, shots:%d, %s",
                 name, coordinates.x, coordinates.y, currentHealth, maxHealth, shots, state);
     }
 

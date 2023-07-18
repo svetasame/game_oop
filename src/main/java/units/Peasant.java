@@ -7,7 +7,7 @@ public class Peasant extends Units {
     {super(30, 0, 1, 0, 0, name, x, y, "Stand");}
     @Override
     public String getInfo() {
-        return String.format("Крестьянин %s, [%d,%d] HP:%d/%d, %d",
+        return String.format("Крестьянин %s, [%d,%d] HP:%d/%d, %s",
                 name, coordinates.x, coordinates.y, currentHealth,maxHealth, state); }
 
     @Override
