@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f910c4e9-d42b-48dc-8704-4949bb47a7b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/AnsiColors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/units/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/units/Crossbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Crossbowman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/units/Healers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Healers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/units/Magician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Magician.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/units/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Monk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/units/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Peasant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/units/Rouge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Rouge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/units/Sniper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Sniper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/units/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Spearman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/units/Units.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/units/Units.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +63,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/gblessons/oop/game_mine",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
@@ -161,6 +172,16 @@
     <MESSAGE value="ДЗ 09.07.2023_1" />
     <MESSAGE value="ДЗ 14.07.23" />
     <option name="LAST_COMMIT_MESSAGE" value="ДЗ 14.07.23" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.IllegalFormatConversionException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -20,12 +20,6 @@ public class Main {
         System.out.println("Команда 2");
         team2.forEach(n -> System.out.println(n.getInfo()));
 
-//        System.out.println();
-//        System.out.println("Ближайший враг: ");
-//        team1.forEach(n -> n.step(team2, team1));
-
-//        Crossbowman crossbowman = new Crossbowman(getName(),1,3);
-//        Sniper sniper = new Sniper(getName(),10,5);
 
         allTeam.addAll(team1);
         allTeam.addAll(team2);
@@ -43,7 +37,7 @@ public class Main {
 
         Scanner in = new Scanner(System.in);
         while (true) {
-            View.view();
+//            View.view();
             in.nextLine();
             for (Units units : allTeam) {
                 if (team2.contains(units)) {

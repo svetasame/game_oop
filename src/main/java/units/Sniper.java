@@ -12,18 +12,13 @@ public class Sniper extends Units {
     public int shots;
 
 
-    public int attackDistance;
-    public void fire() {}
-
-    public int useShots (int shots) {
-       shots -=1;
-       return shots;
-    }
+    public int attackDistance = 4;
 
 
     @Override
     public String getInfo() {
-        return String.format("Снайпер %s, x:%d, y:%d, shots:%d, health:%d", name, coordinates.x, coordinates.y, this.shots, currentHealth);
+        return String.format("Снайпер %s, [%d,%d] HP:%d/%d, shots:%d, %d",
+                name, coordinates.x, coordinates.y, currentHealth, maxHealth, shots, state);
     }
 
     @Override
@@ -37,6 +32,9 @@ public class Sniper extends Units {
                 state = "Attack";
                 System.out.println(getInfo() + "атакует" + tmp.getInfo());
             }
+            else move(tmp.coordinates,ally);
+            state = "Move";
+            return;
         }
         for (Units units: ally){
             if(units instanceof Peasant && state == "Stand"){
@@ -46,11 +44,6 @@ public class Sniper extends Units {
                 return;
             }
         }
-//        if (units2.contains(Peasant.class)){
-//            return;
-//        }
-//        return;
-
     }
 
 

@@ -15,6 +15,8 @@ public abstract class Units implements InGameDN {
     public boolean isAlive;
     protected Coordinates coordinates;
 
+    public int moveDistance = 1;
+
 
 
     public Units(int maxHealth, int mana, int speed, int power, int damage, String name, int x, int y, String state) {
@@ -49,10 +51,6 @@ public abstract class Units implements InGameDN {
         }
     }
 
-
-
-
-
     @Override
     public String getInfo() {
         return name;
@@ -67,6 +65,17 @@ public abstract class Units implements InGameDN {
         String s = String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
         name = s;
         return name;
+    }
+
+    public Coordinates getCords (){ return coordinates;}
+
+
+    public void move (Coordinates units, ArrayList<Units> ally) {
+        if (coordinates.containsByPos(coordinates.newPosition(units),ally)){
+            for (int i = 0; i<moveDistance; i++) {
+                coordinates = coordinates.newPosition(units);
+            }
+        }
     }
 
     public Units nearest(ArrayList<Units> units) {
