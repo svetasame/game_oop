@@ -53,7 +53,4 @@ public class Coordinates {
         return false;
     }
 
-
-
-
 }

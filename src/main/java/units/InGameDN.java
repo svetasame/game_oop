@@ -4,10 +4,10 @@ import java.sql.Array;
 import java.util.ArrayList;
 
 public interface InGameDN {
-    void step(ArrayList<Units> units1, ArrayList<Units> units2);
+    void step(ArrayList<Units> enemy, ArrayList<Units> ally);
     String getInfo();
     int getSpeed();
-    float getHealth();
+    int getHealth();
 
 
 }

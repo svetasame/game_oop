@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Peasant extends Units {
     public Peasant(String name, int x, int y)
-    {super(30, 0, 1, 0, 0, name, x, y, "Stand");}
+    {super(30, 0, 0, name, x, y, "Stand");}
+
     @Override
     public String getInfo() {
         return String.format("Крестьянин %s, [%d,%d] HP:%d/%d, %s",
@@ -15,7 +16,7 @@ public class Peasant extends Units {
         if (isAlive){
             if (state == "Busy"){
                 state = "Stand";
-                System.out.println(getInfo() + " в статусе "  + state);
+                //System.out.println(getInfo() + " в статусе "  + state);
             }
         }
 

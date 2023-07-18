@@ -7,38 +7,71 @@ public class Main {
     public static ArrayList<Units> team1 = new ArrayList<>();
     public static ArrayList<Units> team2 = new ArrayList<>();
     public static ArrayList<Units> allTeam = new ArrayList<>();
-    private static java.lang.Object Units;
-
 
     public static void main(String[] args) {
 
-        ArrayList<Units> team1 = addToList();
-        System.out.println("Команда 1");
-        team1.forEach(n -> System.out.println(n.getInfo()));
+        int teamSize = 10;
+        for (int i = 0; i <= teamSize+1; i++) {
+             switch (new Random().nextInt(4)) {
+                 case 0:
+                     team1.add(new Monk(getName(), 1, i));
+                     break;
+                 case 1:
+                     team1.add(new Crossbowman(getName(), 1, i));
+                     break;
+                 case 2:
+                     team1.add(new Peasant(getName(), 1, i));
+                     break;
+                 case 3:
+                     team1.add(new Spearman(getName(), 1, i));
+                     break;
+            }
+        }
 
-        ArrayList<Units> team2 = addToList1();
+        for (int i = 0; i <= teamSize+1; i++) {
+            switch (new Random().nextInt(4)) {
+                case 0:
+                    team2.add(new Rouge(getName(), 10, i));
+                    break;
+                case 1:
+                    team2.add(new Peasant(getName(), 10, i));
+                    break;
+                case 2:
+                    team2.add(new Magician(getName(), 10, i));
+                    break;
+                case 3:
+                    team2.add(new Sniper(getName(), 10, i));
+                    break;
+            }
+        }
+
+        System.out.println("Команда 1");
+        //team1.forEach(n -> System.out.println(n.getInfo()));
+
         System.out.println();
         System.out.println("Команда 2");
-        team2.forEach(n -> System.out.println(n.getInfo()));
+        //team2.forEach(n -> System.out.println(n.getInfo()));
 
 
         allTeam.addAll(team1);
         allTeam.addAll(team2);
 
         System.out.println();
-        allTeam.forEach(n -> System.out.println(n.getInfo()));
+        //allTeam.forEach(n -> System.out.println(n.getInfo()));
         Collections.sort(allTeam, new Comparator<Units>() {
             @Override
             public int compare(Units o1, Units o2) {
                 return Integer.compare(o2.getSpeed(), o1.getSpeed());
             }
         });
+
+
         System.out.println("Отсортировано по скорости");
-        allTeam.forEach(n -> System.out.println(n.getInfo()));
+        //allTeam.forEach(n -> System.out.println(n.getInfo()));
 
         Scanner in = new Scanner(System.in);
         while (true) {
-//            View.view();
+            View.view();
             in.nextLine();
             for (Units units : allTeam) {
                 if (team2.contains(units)) {
@@ -72,36 +105,5 @@ public class Main {
         return s;
     }
 
-    public static ArrayList<Units> addToList(){
-        ArrayList<Units> team = new ArrayList();
-        for (int i = 0; i <= 10; i++) {
-            int value = new Random().nextInt(4);
-            int x = 1;
-            int y = i+1;
-            switch (value) {
-                case 0 -> team.add(new Monk(getName(), x, y));
-                case 1 -> team.add(new Crossbowman(getName(), x, y));
-                case 2 -> team.add(new Peasant(getName(), x, y));
-                case 3 -> team.add(new Spearman(getName(), x, y));
 
-            }
-        }
-        return team;
-    }
-
-    public static ArrayList<Units> addToList1(){
-        ArrayList<Units> team = new ArrayList();
-        for (int i = 0; i <= 10; i++) {
-            int value = new Random().nextInt(4);
-            int x = 10;
-            int y = i+1;
-            switch (value) {
-                case 0 -> team.add(new Rouge(getName(), x, y));
-                case 1 -> team.add(new Peasant(getName(), x, y));
-                case 2 -> team.add(new Magician(getName(), x, y));
-                case 3 -> team.add(new Sniper(getName(), x, y));
-            }
-        }
-      return team;
-    }
 }

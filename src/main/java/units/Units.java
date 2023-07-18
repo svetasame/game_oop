@@ -8,35 +8,32 @@ public abstract class Units implements InGameDN {
     protected int maxHealth, currentHealth;
     public int mana, currentMana;
     protected int speed;
-    protected int power;
     public String name;
     protected int damage;
     public String state = "Stand";
     public boolean isAlive;
     protected Coordinates coordinates;
-
     public int moveDistance = 1;
 
 
 
-    public Units(int maxHealth, int mana, int speed, int power, int damage, String name, int x, int y, String state) {
-        this.maxHealth = maxHealth;
-        this.mana = mana;
+    public Units(int maxHealth, int mana, int speed, int damage, String name, int x, int y, String state) {
+        this.maxHealth = this.currentHealth = maxHealth;
+        this.mana = this.currentMana = mana;
         this.speed = speed;
-        this.power = power;
         this.name = name;
         this.damage = damage;
-        this.currentHealth = maxHealth;
-        this.currentMana = mana;
-        // Stand, Busy, Dead, Move, Attack, Heal
+          // Stand, Busy, Dead, Move, Attack, Heal
         this.state = state;
         coordinates = new Coordinates(x,y);
       }
 
+    public Units(int maxHealth, int speed, int damage, String name, int x, int y, String state) {
+    }
+
 
     @Override
-    public float getHealth() {return currentHealth;
-    }
+    public int getHealth() {return currentHealth;}
 
     public void getDamage(int damage) {
         currentHealth -= damage;
@@ -61,15 +58,6 @@ public abstract class Units implements InGameDN {
         return speed;
     }
 
-    public String getNewName() {
-        String s = String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
-        name = s;
-        return name;
-    }
-
-    public Coordinates getCords (){ return coordinates;}
-
-
     public void move (Coordinates units, ArrayList<Units> ally) {
         if (coordinates.containsByPos(coordinates.newPosition(units),ally)){
             for (int i = 0; i<moveDistance; i++) {
@@ -81,16 +69,18 @@ public abstract class Units implements InGameDN {
     public Units nearest(ArrayList<Units> units) {
         double nearestDistance = Double.MAX_VALUE;
         Units nearestEnemy = null;
-        for(int i = 0; i < units.size(); i++) {
-            if (coordinates.countDistance(units.get(i).coordinates) < nearestDistance) {
-                nearestEnemy = units.get(i);
-                nearestDistance = coordinates.countDistance(units.get(i).coordinates);
+        for (Units unit : units) {
+            if (coordinates.countDistance(unit.coordinates) < nearestDistance) {
+                nearestEnemy = unit;
+                nearestDistance = coordinates.countDistance(unit.coordinates);
             }
         }
         return nearestEnemy;
    }
 
-
-
+   public int [] getCords() {
+       return new int[] {coordinates.x, coordinates.y};
+   }
+   public String toString(){return this.getClass().getSimpleName();}
 
 }
