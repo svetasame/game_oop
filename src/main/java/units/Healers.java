@@ -36,16 +36,13 @@ public abstract class Healers extends Units {
             }
             if (minAllyHealth < 100) {
                 tmpAlly.getDamage(-damage);
-                state = "Heal";
                 currentMana -= 1;
-                //System.out.println(getInfo() + " вылечил " + tmpAlly.getInfo() + " его здоровье =" + tmpAlly.getHealth());
-                return;
+                state = "Heal";
             }
             else {
                 tmp.getDamage(damage);
                 currentMana -=1;
                 state = "Attack";
-                //System.out.println(getInfo() + " атакует " + tmp.getInfo());
             }
         }
             else {
@@ -53,7 +50,6 @@ public abstract class Healers extends Units {
                 if
                 (currentMana >= mana) {currentMana = mana;}
                 state = "Busy";
-                //System.out.println(getInfo() + " восстанавливает ману");
             }
         }
 

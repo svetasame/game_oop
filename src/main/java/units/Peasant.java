@@ -16,7 +16,6 @@ public class Peasant extends Units {
         if (isAlive){
             if (state == "Busy"){
                 state = "Stand";
-                //System.out.println(getInfo() + " в статусе "  + state);
             }
         }
 

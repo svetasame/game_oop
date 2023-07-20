@@ -23,12 +23,17 @@ public abstract class Units implements InGameDN {
         this.speed = speed;
         this.name = name;
         this.damage = damage;
-          // Stand, Busy, Dead, Move, Attack, Heal
         this.state = state;
         coordinates = new Coordinates(x,y);
       }
 
     public Units(int maxHealth, int speed, int damage, String name, int x, int y, String state) {
+        this.maxHealth = this.currentHealth = maxHealth;
+        this.speed = speed;
+        this.name = name;
+        this.damage = damage;
+        this.state = state;
+        coordinates = new Coordinates(x,y);
     }
 
 

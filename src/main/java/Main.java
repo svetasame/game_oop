@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         int teamSize = 10;
-        for (int i = 0; i <= teamSize+1; i++) {
+        for (int i = 1; i <= teamSize+1; i++) {
              switch (new Random().nextInt(4)) {
                  case 0:
                      team1.add(new Monk(getName(), 1, i));
@@ -28,7 +28,7 @@ public class Main {
             }
         }
 
-        for (int i = 0; i <= teamSize+1; i++) {
+        for (int i = 1; i <= teamSize+1; i++) {
             switch (new Random().nextInt(4)) {
                 case 0:
                     team2.add(new Rouge(getName(), 10, i));
@@ -45,18 +45,17 @@ public class Main {
             }
         }
 
-        System.out.println("Команда 1");
+        //System.out.println("Команда 1");
         //team1.forEach(n -> System.out.println(n.getInfo()));
-
-        System.out.println();
-        System.out.println("Команда 2");
+        //System.out.println();
+        //System.out.println("Команда 2");
         //team2.forEach(n -> System.out.println(n.getInfo()));
 
 
         allTeam.addAll(team1);
         allTeam.addAll(team2);
 
-        System.out.println();
+        //System.out.println();
         //allTeam.forEach(n -> System.out.println(n.getInfo()));
         Collections.sort(allTeam, new Comparator<Units>() {
             @Override
@@ -66,7 +65,7 @@ public class Main {
         });
 
 
-        System.out.println("Отсортировано по скорости");
+        //System.out.println("Отсортировано по скорости");
         //allTeam.forEach(n -> System.out.println(n.getInfo()));
 
         Scanner in = new Scanner(System.in);

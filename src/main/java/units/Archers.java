@@ -18,7 +18,6 @@ public abstract class Archers extends Units {
                 if (units instanceof Peasant && units.state.equals("Stand") && shots <20) {
                     shots += 1;
                     units.state = "Busy";
-                    //System.out.println(getInfo() + " получил снаряд от " + units.getInfo() + " Крестьянин " + units.state);
                     return;
                 }
             }

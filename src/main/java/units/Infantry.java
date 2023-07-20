@@ -15,13 +15,10 @@ public abstract class Infantry extends Units {
         if (coordinates.countDistance(tmp.coordinates) <= attackRange){
             tmp.getDamage(damage);
             state = "Attack";
-            //System.out.println(getInfo() + " атакует " + tmp.getInfo());
         }
         else {
             move(tmp.coordinates,ally);
             state = "Move";
-            //System.out.println(getInfo() + " переходит на  " + coordinates);
         }
-        //System.out.println(tmp.name + " " + coordinates.countDistance(tmp.coordinates));
     }
 }
