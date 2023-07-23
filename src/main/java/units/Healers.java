@@ -7,6 +7,8 @@ public abstract class Healers extends Units {
 
     public Healers(int maxHealth, int mana, int speed, int damage, String name, int x, int y, String state) {
         super(maxHealth, mana, speed, damage, name, x, y, state);
+        currentHealth = maxHealth;
+        currentMana = mana;
     }
 
     @Override
@@ -35,12 +37,12 @@ public abstract class Healers extends Units {
                 return;
             }
             if (minAllyHealth < 100) {
-                tmpAlly.getDamage(-damage);
+                tmpAlly.getDamage(-10);
                 currentMana -= 1;
                 state = "Heal";
             }
             else {
-                tmp.getDamage(damage);
+                tmp.getDamage(10);
                 currentMana -=1;
                 state = "Attack";
             }

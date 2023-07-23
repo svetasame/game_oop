@@ -1,7 +1,7 @@
 package units;
 
 import java.util.ArrayList;
-import java.util.Random;
+
 
 public abstract class Units implements InGameDN {
 
@@ -10,10 +10,11 @@ public abstract class Units implements InGameDN {
     protected int speed;
     public String name;
     protected int damage;
-    public String state = "Stand";
+
+    public String state;
     public boolean isAlive;
     protected Coordinates coordinates;
-    public int moveDistance = 1;
+    public int moveDistance = 10;
 
 
 
@@ -24,6 +25,7 @@ public abstract class Units implements InGameDN {
         this.name = name;
         this.damage = damage;
         this.state = state;
+        isAlive = true;
         coordinates = new Coordinates(x,y);
       }
 
@@ -33,6 +35,7 @@ public abstract class Units implements InGameDN {
         this.name = name;
         this.damage = damage;
         this.state = state;
+        isAlive = true;
         coordinates = new Coordinates(x,y);
     }
 
@@ -41,7 +44,7 @@ public abstract class Units implements InGameDN {
     public int getHealth() {return currentHealth;}
 
     public void getDamage(int damage) {
-        currentHealth -= damage;
+        currentHealth = currentHealth - damage;
         if (currentHealth <= 0) {
             currentHealth = 0;
             isAlive = false;

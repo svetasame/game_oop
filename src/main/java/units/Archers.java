@@ -6,6 +6,7 @@ public abstract class Archers extends Units {
 
     public Archers(int maxHealth, int speed, int damage, String name, int x, int y, String state) {
         super(maxHealth, speed, damage, name, x, y, state);
+        currentHealth = maxHealth;
     }
     public int shots;
     public int attackDistance = 4;
@@ -23,10 +24,9 @@ public abstract class Archers extends Units {
             }
             if ((int)coordinates.countDistance(tmp.coordinates) <= attackDistance) {
                 if (shots > 0 && attackDistance == 1) {
-                    tmp.getDamage(damage);
+                    tmp.getDamage(20);
                     shots -= 1;
                     state = "Attack";
-                    return;
                 } else {
                     attackDistance = 1;
                 }
@@ -35,9 +35,9 @@ public abstract class Archers extends Units {
             else {
                 move(tmp.coordinates, ally);
                 state = "Move";
-                return;
+
             }
         }
-        return;
+
     }
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public abstract class Infantry extends Units {
     public Infantry(int maxHealth, int speed, int damage, String name, int x, int y, String state) {
         super(maxHealth, speed, damage, name, x, y, state);
+        currentHealth = maxHealth;
     }
     int attackRange = 1;
 
@@ -13,7 +14,7 @@ public abstract class Infantry extends Units {
         if (!isAlive) return;
         Units tmp = nearest(enemy);
         if (coordinates.countDistance(tmp.coordinates) <= attackRange){
-            tmp.getDamage(damage);
+            tmp.getDamage(30);
             state = "Attack";
         }
         else {
